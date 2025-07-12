@@ -1,0 +1,14 @@
+# *
+User-agent: *
+Allow: /
+
+# *
+User-agent: *
+Disallow: /api/
+
+# Host
+Host: https://mining-pools-dashboard.com
+
+# Sitemaps
+Sitemap: https://mining-pools-dashboard.com/sitemap.xml
+Sitemap: https://mining-pools-dashboard.com/server-sitemap.xml

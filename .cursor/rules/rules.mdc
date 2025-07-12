@@ -1,0 +1,130 @@
+# Правила проекта
+
+## Технологический стек
+
+### Основные технологии
+- **NextJS** (последняя стабильная версия) - для React фреймворка с SSR/SSG
+- **Redux Toolkit** - для управления состоянием (предпочтительно)
+- **Redux** - для сложных случаев состояния
+- **TailwindCSS** (последняя версия) - для стилизации
+- **Google Fonts Roboto** - основной шрифт проекта
+
+### Версии
+- Всегда используем последние стабильные версии пакетов
+- Регулярно обновляем зависимости
+- Проверяем совместимость при обновлениях
+
+## Соглашения по именованию
+
+### Файлы и папки
+- **camelCase** для всех файлов и папок
+- Примеры: `userProfile.tsx`, `apiHelpers.js`, `componentsLibrary/`
+- Исключения: файлы конфигурации (`package.json`, `tailwind.config.js`)
+
+### Компоненты
+- PascalCase для React компонентов: `UserProfile.tsx`
+- camelCase для хуков: `useUserData.js`
+- camelCase для утилит: `formatDate.js`
+
+## Redux и управление состоянием
+
+### Redux Toolkit (приоритет)
+- Используем RTK Query для API запросов
+- createSlice для создания редьюсеров
+- Правильная типизация с TypeScript
+
+### SSR совместимость
+- Инициализация состояния через `getServerSideProps` или `getStaticProps`
+- Гидратация состояния на клиенте
+- Избегаем клиентского состояния в SSR компонентах
+
+### API интеграция
+- Приоритет API запросам над статическими данными
+- Кэширование через RTK Query
+- Обработка loading и error состояний
+
+## Стилизация с TailwindCSS
+
+### Принципы
+- Utility-first подход
+- Создание переиспользуемых компонентов
+- Responsive дизайн с mobile-first подходом
+- **ОБЯЗАТЕЛЬНАЯ поддержка темной и светлой темы**
+
+### Темы
+- Светлая тема как основная
+- Темная тема обязательна для всех интерфейсов
+- Переключатель тем должен быть доступен пользователю
+- Использование `dark:` префиксов TailwindCSS
+- Сохранение выбора темы в localStorage
+
+### Шрифты
+- Roboto как основной шрифт через Google Fonts
+- Настройка в `tailwind.config.js`
+- Оптимизация загрузки шрифтов
+
+## Структура проекта
+
+```
+/
+├── pages/              # NextJS страницы
+├── components/         # Переиспользуемые компоненты
+├── store/             # Redux store и slices
+├── hooks/             # Custom hooks
+├── utils/             # Утилитарные функции
+├── styles/            # Глобальные стили
+├── types/             # TypeScript типы
+└── api/               # API утилиты
+```
+
+## Код стандарты
+
+### React/NextJS
+- Функциональные компоненты с хуками
+- TypeScript для типизации
+- Правильное использование useEffect для SSR
+- Оптимизация изображений через next/image
+
+### Redux
+- Нормализованная структура состояния
+- Избегаем мутаций состояния
+- Async thunks для асинхронных операций
+- Middleware для логирования в development
+
+### Performance
+- Code splitting через dynamic imports
+- Lazy loading компонентов
+- Оптимизация bundle size
+- Использование getStaticProps где возможно
+
+## SSR/SSG Guidelines
+
+### Server-Side Rendering
+- getServerSideProps для динамических данных
+- Правильная гидратация Redux store
+- Избегаем клиентских API на сервере
+
+### Static Site Generation
+- getStaticProps для статического контента
+- getStaticPaths для динамических роутов
+- ISR (Incremental Static Regeneration) где уместно
+
+## Качество кода
+
+### Линтинг и форматирование
+- ESLint с NextJS конфигом
+- Prettier для форматирования
+- Husky для pre-commit хуков
+
+### Тестирование
+- Jest для unit тестов
+- React Testing Library для компонентов
+- Cypress для E2E тестов
+
+---
+
+*Эти правила обновляются вместе с развитием технологий*
+description:
+globs:
+alwaysApply: false
+---
