@@ -15,8 +15,8 @@ export const sortPools = (pools: MiningPool[], sortConfig: SortConfig): MiningPo
       case 'status':
         // Приоритет статусов: online > degraded > offline
         const statusPriority = { online: 3, degraded: 2, offline: 1 };
-        aValue = statusPriority[aValue] || 0;
-        bValue = statusPriority[bValue] || 0;
+        aValue = statusPriority[aValue as keyof typeof statusPriority] || 0;
+        bValue = statusPriority[bValue as keyof typeof statusPriority] || 0;
         break;
       case 'hashrateTHs':
       case 'activeWorkers':
