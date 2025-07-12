@@ -31,9 +31,11 @@ const HomePage: React.FC = () => {
             <div className="flex justify-between items-center py-6">
               <div className="flex items-center">
                 <div className="flex-shrink-0">
-                  <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100">
-                    ⚡ Mining Pools Dashboard
-                  </h1>
+                  <Link href="/">
+                    <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100">
+                      ⚡ <span className="hidden md:inline">Mining Pools Dashboard</span>
+                    </h1>
+                  </Link>
                 </div>
               </div>
               <div className="flex items-center space-x-6">
