@@ -23,7 +23,7 @@ export const ThemeToggle: React.FC = () => {
     >
       <span
         className={`
-          inline-block h-6 w-6 transform rounded-full bg-white shadow-lg ring-0 transition-transform duration-300 ease-in-out flex items-center justify-center
+          h-6 w-6 transform rounded-full bg-white shadow-lg ring-0 transition-transform duration-300 ease-in-out flex items-center justify-center
           ${theme === 'dark' ? 'translate-x-7' : 'translate-x-1'}
         `}
       >
